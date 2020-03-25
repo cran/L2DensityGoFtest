@@ -1,0 +1,19 @@
+importFrom("stats", sd, quantile, rweibull, rlnorm, rchisq, rexp, dweibull, dlnorm, dchisq, dexp,
+                    pweibull, plnorm, pchisq, pexp, rbinom, rgeom,
+                    rpois, rnbinom,  dbinom, dgeom, dpois, dnbinom,
+                    pbinom, pgeom, ppois, pnbinom, dnorm, dunif, pnorm, qnorm, punif, runif, bw.nrd,
+                    bw.SJ)
+
+importFrom("utils", head, tail )
+
+importFrom("kedd", kernel.conv, kernel.fun )
+
+importFrom("fGarch", garchFit )
+
+importFrom("nor1mix", dnorMix )
+
+exportPattern("^[[:alpha:]]+")
+
+exportPattern("^[^\\.]")
+
+
