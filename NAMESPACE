@@ -2,7 +2,7 @@ importFrom("stats", sd, quantile, rweibull, rlnorm, rchisq, rexp, dweibull, dlno
                     pweibull, plnorm, pchisq, pexp, rbinom, rgeom,
                     rpois, rnbinom,  dbinom, dgeom, dpois, dnbinom,
                     pbinom, pgeom, ppois, pnbinom, dnorm, dunif, pnorm, qnorm, punif, runif, bw.nrd,
-                    bw.SJ)
+                    bw.SJ, integrate)
 
 importFrom("utils", head, tail )
 

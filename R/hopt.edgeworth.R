@@ -1,4 +1,4 @@
-hopt.cutoff<-function(xin,   dist, kfun, p1, p2, sig.lev )
+hopt.edgeworth<-function(xin,   dist, kfun, p1, p2, sig.lev )
 {
   n<-length(xin)
   h<-bw.nrd(xin) #pilot bandwidth for the kernel estimate
@@ -9,7 +9,7 @@ hopt.cutoff<-function(xin,   dist, kfun, p1, p2, sig.lev )
 
   RK<-  3/5 # for epanechnikov,  1/(2*sqrt(pi)) #for gaussian, 1/2 # for uniform,
   RKuse<-RK^{3/2}
-  ConvK<- kernel.conv(kernel.conv(0, deriv.order = 0, kernel =  kfun)$kx, deriv.order = 0, kernel =  kfun)$kx #1/(2*sqrt(2*pi)) #fConvolution(kernel)
+  ConvK<- kernel.conv(kernel.conv(0, deriv.order = 0, kernel =  kfun)$kx, deriv.order = 0, kernel =  kfun)$kx
   ML.Dens<- NDistDens(xin, dist, p1, p2)
   mu.2 <- mean((DensityEst - ML.Dens)^2)
   nu.2 <- mean(DensityEst^2)
@@ -20,16 +20,6 @@ hopt.cutoff<-function(xin,   dist, kfun, p1, p2, sig.lev )
   term2<- ( 1/(    sqrt(2*   nu.2 * RK)) )^{-3/2}
   banduse<-   term1 * (n*RDeltaR)^{-3/2} *term2
 
-  z.a<-qnorm(mean=mean(xin), sd=sd(xin), 1-sig.lev/2)
-  n<-length(xin)
-  sqrt.h<-sqrt(banduse)
-  z.a.sq<-z.a^2 -1
-  d0.1<- z.a.sq  *  ConvK * mean(DensityEst^3) *mu.2^3 / (3*SigmaSq^(3/2) )
-  d0.2 <- RDeltaR /sqrt(2*nu.2 * RK) # RDeltaR is used as an estimate of C_{H_0}
-  d0<- d0.1-d0.2
-  d2<- z.a.sq *  mean((DensityEst - ML.Dens)^3)^2  * kernel.fun(0,0, kfun)$kx^2 / SigmaSq^(3/2)
-  cut.off<- z.a + d0 * sqrt.h + d2/( n*sqrt.h)
-
-  c(banduse  , cut.off)
+  banduse
 
 }

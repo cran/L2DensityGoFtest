@@ -33,10 +33,7 @@ The value of the kernel at \eqn{x}
 }
 
 \references{
-\enumerate{
-\item \href{https://ieeexplore.ieee.org/document/4385743}{Bagkavos and Patil, Local Polynomial Fitting in Failure Rate Estimation, IEEE Transactions on Reliability, 57, (2008)},
-\item \href{https://link.springer.com/article/10.1007/s10463-010-0277-6}{Bagkavos (2011),  Annals of the Institute of Statistical Mathematics, 63(5), 1019-1046},
-}
+Wand and Jones,  (1996), Kernel Smoothing, Chapman and Hall, London
 }
 
 %\author{

@@ -28,7 +28,7 @@ A vector containing the density values of the designated distribution
 }
 
 \references{
-Will be added in due course
+Bagkavos, Patil and Wood: Nonparametric goodness-of-fit testing for a continuous multivariate parametric model, (2021), under review.
 }
 
 \author{
