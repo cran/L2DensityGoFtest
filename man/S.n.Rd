@@ -7,13 +7,12 @@ Implements a density goodness of fit test based on a discretized approximation o
 }
 
 \usage{
-S.n(xin, h, drate, dist, p1, p2)
+S.n(xin, h,  dist, p1, p2)
 }
 
 \arguments{
 \item{xin}{A vector of data points - the available sample size.}
 \item{h}{The bandwidth to use, typically the output of \code{hopt.edgeworth}.}
-\item{drate}{power to use for the binning, the  default is 3/4.}
 \item{dist}{The null distribution.}
 \item{p1}{Argument 1 (vector or object) for the null distribution.}
 \item{p2}{Argument 2 (vector or object) for the null distribution.}
@@ -30,11 +29,11 @@ where \eqn{K} is the Epanechnikov kernel implemented in this package with the \c
 
 
 \value{
-A vector with the value of the test statistic as well as the bandwidth used for its calculation
+A vector with the value of the test statistic as well as the Delta value used for its calculation
 }
 
 \references{
-Bagkavos, Patil and Wood: Nonparametric goodness-of-fit testing for a continuous multivariate parametric model, (2021), under review.
+Wood Bagkavos and  Patil: Nonparametric goodness-of-fit testing for a continuous multivariate parametric model, (2021), under review.
 }
 
 \author{
@@ -74,8 +73,8 @@ h.be <- hopt.be(xin)
 # Edgeworth based cutoff point:
 cutoff<-cutoff.edgeworth(xin,   Nulldist, kfun, p1, p2, a.sig )
 
-TestStatistic<-S.n(xin, h, 1/3, Nulldist, p1, p2)
-TestStatistic.be<-S.n(xin, h.be, 1/3, Nulldist, p1, p2)
+TestStatistic<-S.n(xin, h, Nulldist, p1, p2)
+TestStatistic.be<-S.n(xin, h.be, Nulldist, p1, p2)
 
 cat("L2 test statistic value Edgeworth:", TestStatistic[1],
 "\nL2 test statistic value Barry-Essen bandwidth:", TestStatistic.be[1],
