@@ -4,6 +4,7 @@
 \alias{Triangular}
 \alias{Gaussian}
 \alias{Rectangular}
+\alias{Epanechnikov2}
 
 \title{Kernel functions}
 
@@ -17,6 +18,7 @@ Epanechnikov(x, ...)
 Triangular(x, ...)
 Gaussian(x, ...)
 Rectangular(x, ...)
+Epanechnikov2(x)
 }
 
 \arguments{
@@ -25,7 +27,7 @@ Rectangular(x, ...)
 }
 
 \details{
-Implements the Biweight, Triangular, Guassian, Rectangular and Epanechnikov kernels.
+Implements the Biweight, Triangular, Guassian, Rectangular and Epanechnikov (including the alternative version in Epanechnikov2) kernels.
 }
 
 \value{

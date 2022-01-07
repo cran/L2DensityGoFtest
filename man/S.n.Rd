@@ -1,9 +1,9 @@
 \name{S.n}
-\title{Goodness-of-Fit test statistic based on discretized L2 distance}
+\title{Density goodness-of-fit test statistic based on discretized L2 distance}
 \alias{S.n}
 
 \description{
-Implements a density goodness of fit test based on a discretized approximation of the L2 distance.
+Implements the density goodness of fit test statistic \eqn{\hat{S}_n(h)} of Bagkavos, Patil and Wood (2021), based on aggregation of local discrepancies between the fitted parametric density and a nonparametric empirical density estimator.
 }
 
 \usage{
@@ -14,8 +14,8 @@ S.n(xin, h,  dist, p1, p2)
 \item{xin}{A vector of data points - the available sample size.}
 \item{h}{The bandwidth to use, typically the output of \code{hopt.edgeworth}.}
 \item{dist}{The null distribution.}
-\item{p1}{Argument 1 (vector or object) for the null distribution.}
-\item{p2}{Argument 2 (vector or object) for the null distribution.}
+\item{p1}{Parameter 1 (vector or object) for the null distribution.}
+\item{p2}{Parameter 2 (vector or object) for the null distribution.}
 }
 
 \details{
@@ -33,19 +33,20 @@ A vector with the value of the test statistic as well as the Delta value used fo
 }
 
 \references{
-Wood Bagkavos and  Patil: Nonparametric goodness-of-fit testing for a continuous multivariate parametric model, (2021), under review.
+Bagkavos, Patil and Wood: Nonparametric goodness-of-fit testing for a continuous multivariate parametric model, (2021), under review.
 }
 
 \author{
 R implementation and documentation: Dimitrios Bagkavos <dimitrios.bagkavos@gmail.com>
 }
 
-\seealso{ \code{\link{hopt.edgeworth}}}
+\seealso{ \code{\link{S.n.Boot}}}
 
 \examples{
 library(fGarch)
 library(kedd)
-data(EuStockMarkets)
+library(boot)
+ \dontrun{data(EuStockMarkets)
 DAX <- as.ts(EuStockMarkets[,"DAX"])
 dax <-  diff(log(DAX))#[,"DAX"]
 
@@ -70,17 +71,24 @@ p2<- sd(xin)
 #Power optimal bandwidth:
 h<-hopt.edgeworth(xin,   Nulldist, kfun, p1, p2, a.sig )
 h.be <- hopt.be(xin)
-# Edgeworth based cutoff point:
+# Edgeworth cutoff point:
 cutoff<-cutoff.edgeworth(xin,   Nulldist, kfun, p1, p2, a.sig )
+# Bootstrap cutoff point:
+cutoff.boot<-cutoff.bootstrap(xin, 100,  "permutation", Nulldist, h.be, kfun, p1, p2, a.sig)
+# Asympt. Norm. cutoff point:
+cutoff.asympt<-cutoff.asymptotic( Nulldist,   p1, p2, a.sig )
 
 TestStatistic<-S.n(xin, h, Nulldist, p1, p2)
 TestStatistic.be<-S.n(xin, h.be, Nulldist, p1, p2)
 
-cat("L2 test statistic value Edgeworth:", TestStatistic[1],
+cat("L2 test statistic value with power opt. band:", TestStatistic[1],
 "\nL2 test statistic value Barry-Essen bandwidth:", TestStatistic.be[1],
-"\ncritical value :", cutoff, "\n")
-#L2 test statistic value Edgeworth: 21.49267
-#L2 test statistic value Barry-Essen bandwidth: 52.66799
-# critical value : 2.140446
-# L2 test statistic >  critical value, hence normality is rejected
+"\ncritical value asymptotic:", round(cutoff.asympt,3), "critical value bootstrap:",
+round(cutoff.boot,3),  "critical value Edgeworth:", round(cutoff,3), "\n")
+#L2 test statistic value Edgeworth: 7.257444
+#L2 test statistic value Berry-Esseen bandwidth: 10.97069
+# critical value Asymptotically Norm.:  1.801847
+# critical value Edgeworth: 2.140446
+# critical value bootstrap: 6.040048
+# L2 test statistic >  critical value on all occasions, hence normality is rejected}
 }

@@ -2,10 +2,10 @@
 \alias{hopt.be}
 
 
-\title{Power-optimal bandwidth and critical value}
+\title{Power-optimal bandwidth for the test statistic \eqn{\hat{S}_n(h)}}
 
 \description{
-Implements the power-optimal bandwidth for density goodness-of-fit testing based on a Berry Essen bound.
+Implements an optimal, with respect to Berry-Esseen bound, bandwidth for the density goodness-of-fit test \eqn{\hat{S}_n(h)} of Bagkavos, Patil and Wood (2021).
 }
 
 \usage{
@@ -13,11 +13,11 @@ hopt.be(xin)
 }
 
 \arguments{
-\item{xin}{ A vector of data points - the available sample size.}
+\item{xin}{ A vector of data points - the available sample.}
 }
 
 \details{
-Implements the power-optimal bandwidth for the test statistic \code{\link{S.n}} given by
+Implements the  Berry-Esseen bound optimal bandwidth  defined in (18), Bagkavos, Patil and Wood (2022), given by
 \deqn{ h =   n^{-1/2} \sqrt{\frac{\hat \nu_p R_4(K)}{\rho_\ast^2 \hat \nu_4 I_0(K)} },   }
 where
 \deqn{  \hat \nu_p = n^{-1} \sum_{j=1}^n \hat f(X_j; \hat h_a),  }
@@ -26,7 +26,7 @@ and \eqn{\hat h_a} is the density optimal bandwidth calculated by a reference to
 \deqn{   R_4(K)=\int K^4(x)\,dx.}
 }
 \value{
-The estimate of the power-optimal bandwidth
+The estimate of the Berry-Esseen optimal bandwidth.
 }
 
 \references{
@@ -44,10 +44,9 @@ R implementation and documentation: Dimitrios Bagkavos <dimitrios.bagkavos@gmail
 %%  ~~further notes~~
 %}
 
-%\seealso{
-%\code{\link{alfa.profile}, \link{alfa}, \link{alfainv}, \link{alpha.mle}
-%}
-%}
+\seealso{
+\code{\link{hopt.edgeworth}  }
+}
 
 %\examples{
 %

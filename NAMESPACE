@@ -9,8 +9,9 @@ importFrom("utils", head, tail )
 importFrom("kedd", kernel.conv, kernel.fun )
 
 importFrom("fGarch", garchFit )
+importFrom("boot", boot )
 
-importFrom("nor1mix", dnorMix )
+importFrom("nor1mix", dnorMix, norMixMLE, norMix)
 
 exportPattern("^[[:alpha:]]+")
 
