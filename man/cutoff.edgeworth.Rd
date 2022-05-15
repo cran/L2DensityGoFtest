@@ -52,14 +52,9 @@ Dimitrios Bagkavos
 R implementation and documentation: Dimitrios Bagkavos <dimitrios.bagkavos@gmail.com>
 }
 
-%\note{
-%%  ~~further notes~~
-%}
 
 \seealso{
 \code{\link{cutoff.asymptotic}, \link{cutoff.bootstrap} }
 }
 
-%\examples{
-%
-%}
+

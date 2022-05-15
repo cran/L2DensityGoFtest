@@ -6,7 +6,7 @@ importFrom("stats", sd, quantile, rweibull, rlnorm, rchisq, rexp, dweibull, dlno
 
 importFrom("utils", head, tail )
 
-importFrom("kedd", kernel.conv, kernel.fun )
+
 
 importFrom("fGarch", garchFit )
 importFrom("boot", boot )

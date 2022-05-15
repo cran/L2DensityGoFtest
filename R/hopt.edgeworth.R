@@ -9,7 +9,14 @@ hopt.edgeworth<-function(xin,   dist, kfun, p1, p2, sig.lev )
 
   RK<-  3/5 # for epanechnikov,  1/(2*sqrt(pi)) #for gaussian, 1/2 # for uniform,
   RKuse<-RK^{3/2}
-  ConvK<- kernel.conv(kernel.conv(0, deriv.order = 0, kernel =  kfun)$kx, deriv.order = 0, kernel =  kfun)$kx
+  ConvK<- switch(kfun,
+                 Gaussian = 0.2765382,
+                 Epanechnikov = 0.409542,
+                 Triangular = 0.3703704,
+                 Rectangular = 0.3703704,
+                 Biweight = 0.3276294,
+                 Epanechnikov2 = 0.409542
+                 ) #kernel.conv(kernel.conv(0, deriv.order = 0, kernel =  kfun)$kx, deriv.order = 0, kernel =  kfun)$kx
   ML.Dens<- NDistDens(xin, dist, p1, p2)
   mu.2 <- mean((DensityEst - ML.Dens)^2)
   nu.2 <- mean(DensityEst^2)

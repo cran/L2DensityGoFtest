@@ -38,21 +38,3 @@ The value of the kernel at \eqn{x}
 Wand and Jones,  (1996), Kernel Smoothing, Chapman and Hall, London
 }
 
-%\author{
-%Dimitrios Bagkavos
-%
-%R implementation and documentation: Dimitrios Bagkavos <dimitrios.bagkavos@gmail.com>
-%}
-
-%\note{
-%%  ~~further notes~~
-%}
-
-%\seealso{
-%\code{\link{alfa.profile}, \link{alfa}, \link{alfainv}, \link{alpha.mle}
-%}
-%}
-
-%\examples{
-%
-%}

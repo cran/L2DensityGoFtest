@@ -37,15 +37,4 @@ Dimitrios Bagkavos
 R implementation and documentation: Dimitrios Bagkavos <dimitrios.bagkavos@gmail.com>
 }
 
-%\note{
-%%  ~~further notes~~
-%}
 
-%\seealso{
-%\code{\link{alfa.profile}, \link{alfa}, \link{alfainv}, \link{alpha.mle}
-%}
-%}
-
-%\examples{
-%
-%}

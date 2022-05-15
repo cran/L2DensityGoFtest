@@ -24,7 +24,6 @@ Implements the test statistic used for testing the hypothesis
 This density goodness-of-fit test is based on a discretized approximation of the L2 distance. Assuming that \eqn{n} is the number of observations and \eqn{g = (max(xin)-min(xin))/n^{-drate}} is the number of bins in which the range of the data is split, the test statistic is:
 \deqn{ S_n(h) = n \Delta^2 h^{-1/2} {\sum\sum}_{i \neq j} K \{ (X_i-X_j)h^{-1}\} \{Y_i -f_0(X_i) \}\{Y_j -f_0(X_j) \} }
 where \eqn{K} is the Epanechnikov kernel implemented in this package with the \code{\link{Epanechnikov}} function. The null model \eqn{f_0} is specified through the \code{dist} argument with parameters passed through the  \code{p1} and \code{p2} arguments.  The test is implemented either with bandwidth \code{\link{hopt.edgeworth}} or with  bandwidth \code{\link{hopt.be}} which provide the value of \eqn{h} needed for calculation of \eqn{ S_n(h)} and the critical value used to determine acceptance or rejection of the null hypothesis. See the example below for an application to a real world dataset.
-
 }
 
 
@@ -44,7 +43,6 @@ R implementation and documentation: Dimitrios Bagkavos <dimitrios.bagkavos@gmail
 
 \examples{
 library(fGarch)
-library(kedd)
 library(boot)
  \dontrun{data(EuStockMarkets)
 DAX <- as.ts(EuStockMarkets[,"DAX"])

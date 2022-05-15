@@ -75,7 +75,7 @@ p2 <-1
 sig.lev <- 0.05
 
 sim<-"ordinary"
-
+\dontrun{
 #Run the following to compare the asymptotic and bootstrap cut-off points on 4 occasions:
 for(i in 15:18)
   {
@@ -87,4 +87,5 @@ for(i in 15:18)
     #print the result of each iteration:
     cat("Asympt. cut.off= ", l.a.a, "Boot. cut.off= ", l.a.b,  "\n")
    }
+}
 }
