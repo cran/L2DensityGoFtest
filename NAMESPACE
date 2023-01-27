@@ -12,6 +12,7 @@ importFrom("fGarch", garchFit )
 importFrom("boot", boot )
 
 importFrom("nor1mix", dnorMix, norMixMLE, norMix)
+importFrom("mvtnorm", rmvnorm)
 
 exportPattern("^[[:alpha:]]+")
 

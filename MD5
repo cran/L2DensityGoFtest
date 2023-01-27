@@ -1,9 +1,10 @@
-0b94703a1bbbeacf79e028e566794de1 *DESCRIPTION
-b0954166ed394e44362ae1f8d94d7126 *NAMESPACE
+c372c4c6e38a211ac8d0e2ee0a129974 *DESCRIPTION
+5f05136e7f7f58bdc75f87a624311f0c *NAMESPACE
 cbac6bc36acd0281a085165c737cb0fa *R/Kernels.R
 095a552636af2362716d12ba751e4410 *R/NDistDens.R
 0310e4287d9e043902f15134f4d19dfc *R/S.n.Boot.R
 467ba282c07ba1d392a408fee866dd74 *R/S.n.R
+47a34ce886badd6a6a53fd620dcbd3da *R/S.nd.R
 04a44636beb0c4695bca706c3cb1abfd *R/cutoff.asymptotic.R
 1e16c0690cfcddb47ed7119e108ddac7 *R/cutoff.bootstrap.R
 d7bf61132666347e695db31dd138b61f *R/cutoff.edgeworth.R
@@ -14,6 +15,7 @@ d0ab3369e27fad78dcb48f682a6e9b6b *man/Kernels.Rd
 fdf0a397f49a03dd09396b67b72c45ef *man/NDistDens.Rd
 a1591287be692805a83e353b52fae017 *man/S.n.Boot.Rd
 79056ed29e0dcb205b626ebebb898d01 *man/S.n.Rd
+09e95ec55918230be5135cac5093b859 *man/S.nd.Rd
 3566c845f29b3ad39edd38d36a7511aa *man/cutoff.asymptotic.Rd
 5ac85706f2557c3c9287c0ee25d86ff0 *man/cutoff.bootstrap.Rd
 d1f77469cd0e4e24b5bc8b3b3caa2132 *man/cutoff.edgeworth.Rd
